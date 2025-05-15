@@ -1,0 +1,105 @@
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    color: #007bff;
+    text-align: center;
+}
+
+#input-area {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#json-input {
+    width: calc(100% - 22px); /* Considera padding e border */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+button {
+    display: inline-block;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+#list-controls {
+    margin-bottom: 15px;
+    text-align: right;
+}
+
+.category-block {
+    margin-bottom: 20px;
+}
+
+.category-title {
+    font-size: 1.5em;
+    color: #555;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.product-item:last-child {
+    border-bottom: none;
+}
+
+.product-item input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2); /* Rende la checkbox leggermente più grande */
+}
+
+.product-item label {
+    flex-grow: 1;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+.product-item.checked label {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
+/* Classe per nascondere gli elementi non selezionati */
+.hide-checked .product-item.checked {
+    display: none;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista della Spesa PWA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#007bff">
+</head>
+<body>
+    <div class="container">
+        <h1>La Mia Lista della Spesa</h1>
+
+        <div id="input-area">
+            <h2>Carica la tua lista:</h2>
+            <p>Incolla qui la tua lista in formato JSON (es: <code>{"Frutta": ["Mela", "Banana"], "Verdura": ["Carota"]}</code>):</p>
+            <textarea id="json-input" rows="5" placeholder='{ "Frutta": ["Mela", "Banana"] }'></textarea>
+            <button id="load-list-button">Carica Lista</button>
+        </div>
+
+        <div id="list-controls" style="display: none;">
+            <button id="toggle-unchecked-button">Nascondi Non Acquistati</button>
+        </div>
+
+        <div id="shopping-list-container">
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js').then(registration => {
+                    console.log('ServiceWorker registrato con successo:', registration.scope);
+                }).catch(error => {
+                    console.log('Registrazione ServiceWorker fallita:', error);
+                });
+            });
+        }
+    </script>
+</body>
+</html>
