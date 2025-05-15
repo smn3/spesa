@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // DOM elements
     const shoppingListContainer = document.getElementById('shopping-list-container');
     const jsonInput = document.getElementById('json-input');
+    const loadJSONButton = document.getElementById('load-json-button');
     const loadListButton = document.getElementById('load-list-button');
     const toggleUncheckedButton = document.getElementById('toggle-unchecked-button');
     const inputArea = document.getElementById('input-area');
@@ -13,6 +14,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Attempt to load the shopping list from the URL hash on page load
     loadListFromURL();
+
+    // Event listener for the "Load JSON" button
+    loadJSONButton.addEventListener('click', () => {
+        try {
+            // Parse the JSON input and convert it to the internal format
+            const rawInput = lista;
+            shoppingListData = convertRawInputToInternalFormat(rawInput);
+
+            // Clear the input field and update the UI
+            jsonInput.value = '';
+            inputArea.style.display = 'none'; // Hide the input area
+            listControls.style.display = 'block'; // Show the list controls
+            renderShoppingList(); // Render the shopping list
+            updateURLHash(); // Update the URL hash with the new data
+        } catch (error) {
+            // Handle JSON parsing errors
+            alert("Errore nel formato JSON. Assicurati che sia corretto.\nEs: {\"Frutta\": [\"Mela\", \"Banana\"]}");
+            console.error("Errore parsing JSON:", error);
+        }
+    });
 
     // Event listener for the "Load List" button
     loadListButton.addEventListener('click', () => {

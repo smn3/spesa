@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,17 @@
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#007bff">
 </head>
+
 <body>
     <div class="container">
         <h1>La Mia Lista della Spesa</h1>
 
         <div id="input-area">
             <h2>Carica la tua lista:</h2>
-            <p>Incolla qui la tua lista in formato JSON (es: <code>{"Frutta": ["Mela", "Banana"], "Verdura": ["Carota"]}</code>):</p>
+            <p>Incolla qui la tua lista in formato JSON (es:
+                <code>{"Frutta": ["Mela", "Banana"], "Verdura": ["Carota"]}</code>):</p>
             <textarea id="json-input" rows="5" placeholder='{ "Frutta": ["Mela", "Banana"] }'></textarea>
+            <button id="load-json-button">Carica default JSON</button>
             <button id="load-list-button">Carica Lista</button>
         </div>
 
@@ -24,9 +28,10 @@
         </div>
 
         <div id="shopping-list-container">
-            </div>
+        </div>
     </div>
 
+    <script src="lista.js"></script>
     <script src="script.js"></script>
     <script>
         if ('serviceWorker' in navigator) {
@@ -40,4 +45,5 @@
         }
     </script>
 </body>
+
 </html>

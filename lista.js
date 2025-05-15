@@ -1,4 +1,4 @@
-{
+const lista = {
     "Igiene e Casa": [
       "Dentifrici",
       "Bagnoschiuma",
