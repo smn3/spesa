@@ -3,6 +3,7 @@ const urlsToCache = [
     '.', // Alias per index.html
     'index.html',
     'style.css',
+    'lista.js',
     'script.js',
     'manifest.json',
     // Aggiungi qui le tue icone se vuoi metterle in cache esplicitamente
